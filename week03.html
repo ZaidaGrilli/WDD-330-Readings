@@ -5,5 +5,185 @@
 </head>
 <body>
     <p>Reading Notes</p>
+
+    
+    <h2>Scheduling: setTimeout and setInterval</h2>
+    <p>
+        We may decide to execute a function not right now, but at a certain time later. That’s called “scheduling a call”.<br>
+        <br>
+        There are two methods for it:<br>
+        setTimeout allows us to run a function once after the interval of time.<br>
+        <br>
+        setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.<br>
+        <br>
+        These methods are not a part of JavaScript specification. But most environments have the internal scheduler and provide these methods. In particular, they are supported in all browsers and Node.js.
+    </p>
+    <h2>setTimeout</h2>
+    <h4>
+        The syntax:<br>
+        let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)
+    </h4>
+
+    <h2>Canceling with clearTimeout</h2>
+
+    <p>Syntax</p>
+    <p>let timerId = setTimeout(...);<br>
+        clearTimeout(timerId);</p>
+    
+    <h2>setInterval</h2>
+    <p>The <code>setInterval</code> method has the same syntax as <code>setTimeout</code>:</p>
+
+    <div id="rq4jj3ipsp" data-trusted="1" class="code-example" data-prism-highlighted="1">
+        <div class="codebox code-example__codebox">
+          
+          <div class="codebox__code" data-code="1">
+            <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> timerId <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span>func<span class="token operator">|</span>code<span class="token punctuation">,</span> <span class="token punctuation">[</span>delay<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>arg1<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>arg2<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">)</span></code></pre>
+          </div>
+        </div>
+        
+        </div>
+
+    <h2>Zero delay setTimeout</h2>
+    <p>There’s a special use case: <code>setTimeout(func, 0)</code>, or just <code>setTimeout(func)</code>.</p>
+    <p>This schedules the execution of <code>func</code> as soon as possible. But the scheduler will invoke it only after the currently executing script is complete.</p>
+
+    <div id="awvpww8ihe" data-trusted="1" class="code-example" data-prism-highlighted="1">
+        <div class="codebox code-example__codebox">
+          
+          <div class="toolbar codebox__toolbar">
+            <div class="toolbar__tool">
+              <a href="#" title="run" data-action="run" class="toolbar__button toolbar__button_run"></a>
+            </div>
+            <div class="toolbar__tool">
+              <a href="#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+            </div>
+          </div>
+          <div class="codebox__code" data-code="1">
+            <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"World"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </div>
+        </div>
+        
+        </div>
+    
+
+
+    <h1>Task</h1>
+
+
+
+
+
+    <h2>Output Every Second</h2>
+    <p class="codepen" data-height="314" data-default-tab="js" data-slug-hash="bGjaLvW" data-user="zaidagrilli" style="height: 314px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/zaidagrilli/pen/bGjaLvW">
+        Untitled</a> by ZaidaGrilli (<a href="https://codepen.io/zaidagrilli">@zaidagrilli</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+      <a href="index.html">Back to index</a>
+
+
+    <p>Using nested setTimeout:</p>
+
+    <p class="codepen" data-height="353" data-default-tab="js" data-slug-hash="KKBZozx" data-user="zaidagrilli" style="height: 353px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+        <span>See the Pen <a href="https://codepen.io/zaidagrilli/pen/KKBZozx">
+        Untitled</a> by ZaidaGrilli (<a href="https://codepen.io/zaidagrilli">@zaidagrilli</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+      </p>
+      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+      <div class="formatted"><p>Any <code>setTimeout</code> will run only after the current code has finished.</p>
+        <p>The <code>i</code> will be the last one: <code>100000000</code>.</p>
+        <div id="szrrbvujkx" data-trusted="1" class="code-example" data-prism-highlighted="1">
+              <div class="codebox code-example__codebox">
+                
+                <div class="toolbar codebox__toolbar">
+                  <div class="toolbar__tool">
+                    <a href="#" title="run" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                  </div>
+                  <div class="toolbar__tool">
+                    <a href="#" title="open in sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+                  </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                  <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">alert</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 100000000</span>
+        
+        <span class="token comment">// assume that the time to execute this function is &gt;100ms</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000000</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          i<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span></code></pre>
+                </div>
+              </div>
+              
+              </div></div>
+
+
+    <div style="background-color: bisque;">
+        <h1>10 MOBILE UX DESIGN PRINCIPLES</h1>
+        <h3>1. Content Prioritization</h3>
+        <p>Less is more. When designing your products, keep interface elements to a minimum.
+        Simple designs are what keep the user engaged and at ease with products.</p>
+
+        <h3>2. Make Navigation Intuitive</h3>>
+        <p>Learnability of your design is key for its success. 
+        Users should intuitively be able to navigate through your app via clear pathways and be able to complete all primary tasks without requiring any explanations.</p>
+    
+        <h3>3. Touchscreen Target Sizes</h3>
+        <p>People interact with touch screens using their fingers, maybe even their toes, but that’s none of our business. The important part is to make interface elements big enough to capture these actions. But how big can you make them with only a small amount of screen space?
+            Not only is the size of the target important, but so is the spacing between targets. 
+        </p>
+        <h3>4. Provide User Control</h3>\
+        <p>Allow users to make decisions to personalize their journeys.
+        Changing settings, controlling notifications and cancelling actions provides the user with a sense of control over the system. Apps can suggest actions or provide warnings,
+         but they shouldn’t be the ones doing the decision-making.</p>
+
+        <h3>5. Legible Text Content</h3>
+        <p>The strategy for optimal mobile typography is a balance between legibility and space conservation.<br>
+            Crowding a small space with too much content makes it difficult and straining for users to read. A good rule of thumb is to use 30–40 characters per line for mobile.
+
+            Spacing and layout are also important to improve legibility. Adding space between text aids the user in reading and creates a feeling that there isn’t so much information to take in.
+        </p>
+        <h3>6. Make Interface Elements Clearly Visible</h3>
+        <p>
+            It’s important to have sufficient contrast between content and background in your designs so it’s legible, in any setting, even outside in the sunlight. But getting the right amount of contrast isn’t always easy. WC3’s Web Content Accessibility Guidelines gives contrast ratio recommendations for images and text. The most important part in choosing your text and background is to test it out with users.
+        </p>
+
+        <h3>7. Hand Position Controls</h3>
+        <p>Hand positions should be kept in mind when placing controls on a mobile design. Research findings on how people hold and interact with their mobile phones found that 49% of people rely on one thumb. This statistic is useful to keep in mind when designing to accommodate for the thumb’s reach zone.
+        THUMBS ARE IMPORTANT!!!
+        </p>
+
+        <h3>8. Minimize Data Input</h3>
+        <p>Typing on small devices can be annoying and unfortunately there really isn’t a direct solution to it, other than autocorrect (which let’s be honest, isn’t always accurate). But what you can do is work around the problem by minimizing the need to enter data in your designs.
+
+        </p>
+
+        <h3>9. Create a Seamless Experience</h3>
+        <p>
+            Focus on key user goals by reducing friction, minimizing steps and page loads to decrease interaction time. Make content accessible even without an online connection and provide alternative paths to avoid dead-ends. Make use of the mobile phone’s features, like the camera to scan barcodes, GPS for identifying locations and touch ID in place of passcodes to simplify journeys. Users appreciate smooth interactions with designs and are satisfied when their needs are met effortlessly.
+
+            Synchronization across devices is a key priority for creating seamless experiences. It makes users feel that their workflow isn’t interrupted and aren’t burdened by having to make the effort of transferring data.
+
+        </p>
+
+        <h3>10. Test Your Design</h3>
+        <p>Test early. Test often.
+
+            The key to any successful product is to continuously test and optimize. 
+            Usability testing is essential for the success of your products. Test different features, layouts and variations of your designs to see what works best. Build your products with a user-centered approach by testing with real users. With each round of testing, you uncover new ways to improve your design to meet your users needs.
+        </p>
+    
+    </div>
+
+    <div style="background-color: aliceblue;">
+        Questions:
+        What it's happening with the cart? seriously we can't figure it out.
+    </div>
+
 </body>
 </html>
