@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 02 notes</title>
+</head>
+<body>
+    <h1>Week 04</h1>
+    <p>Reading Notes</p>
+
+    <h2>Breakpoints</h2>
+    <p>This was really important for me cause this week for me. I used the debugger to fix many bugs on the team acvtivity page this week. The breakpoints are specially important to see the how the code is executing until that point.
+        <br>
+    </p>
+    <h2>The command “debugger”</h2>
+    <p>We can also pause the code using the "debugger" command. This was my principal tools this week. By simply writting <code>debugger</code> on the js file I can see how the code behaves until that point and I can evaluate the code from the dev Tools!
+    </p>
+    <h3>Pause and look around</h3>
+    <p>
+       1. Watch – shows current values for any expressions.<br>
+
+You can click the plus + and input an expression. The debugger will show its value, automatically recalculating it in the process of execution.<br>
+
+2. Call Stack – shows the nested calls chain.<br>
+
+At the current moment the debugger is inside hello() call, called by a script in index.html (no function there, so it’s called “anonymous”).<br>
+
+If you click on a stack item (e.g. “anonymous”), the debugger jumps to the corresponding code, and all its variables can be examined as well.<br>
+
+3. Scope – current variables.<br>
+
+Local shows local function variables. You can also see their values highlighted right over the source.<br>
+
+Global has global variables (out of any functions).<br>
+
+There’s also this keyword there that we didn’t study yet, but we’ll do that soon.<br>
+    </p>
+
+    <h3>Execution</h3>
+    <p>Resume”: continue the execution, hotkey F8.<br>
+        <br>
+        Resumes the execution. If there are no additional breakpoints, then the execution just continues and the debugger loses control.<br>
+        I used this one often when I just needed to see one debugger but didn't want to erase the rest yet.<br>
+        <br>
+        <strong>– “Step”:</strong> run the next command, hotkey F9.<br>
+        <br>
+        Clicking this again and again will step through all script statements one by one.<br>
+        <br>
+        <strong>-“Step over”:</strong> run the next command, but don’t go into a function, hotkey F10.<br>
+        If we compare them, the “Step” command goes into a nested function call and pauses the execution at its first line, while “Step over” executes the nested function call invisibly to us, skipping the function internals.
+
+        The execution is then paused immediately after that function call.
+
+        That’s good if we’re not interested to see what happens inside the function call.<br>
+        <br>
+        <strong>– “Step into”</strong>, hotkey F11.
+        That’s similar to “Step”, but behaves differently in case of asynchronous function calls. If you’re only starting to learn JavaScript, then you can ignore the difference, as we don’t have asynchronous calls yet.
+
+        For the future, just note that “Step” command ignores async actions, such as setTimeout (scheduled function call), that execute later. The “Step into” goes into their code, waiting for them if necessary. See DevTools manual for more details.
+
+        <br>
+        – “Step out”: continue the execution till the end of the current function, hotkey Shift+F11.
+        Continue the execution and stop it at the very last line of the current function. That’s handy when we accidentally entered a nested call using , but it does not interest us, and we want to continue to its end as soon as possible.<br>
+        – enable/disable all breakpoints.
+        That button does not move the execution. Just a mass on/off for breakpoints.
+
+        – enable/disable automatic pause in case of an error.
+        When enabled, if the developer tools is open, an error during the script execution automatically pauses it. Then we can analyze variables in the debugger to see what went wrong. So if our script dies with an error, we can open debugger, enable this option and reload the page to see where it dies and what’s the context at that moment.<br>    
+    </p>
+
+    <h2>Coding Style</h2>
+    <p>It is important to have a good syntax when working with a team so our code is readable and easy to maintain.</p>
+    <h3>Syntax</h3>
+    <p>Here we have a guide of the rules to take in mind when writing, I will come here often to check on this.</p>
+    <img src="coding-style.png">
+
+    <p>Currently the team is using an Automated linter to format our code and do improvements in the way we do coe and make it uniform, but it is also important try to learn and use the same style guide when working with other persons anyway.</p>
+    <h2>Try catch error handling</h2>
+    <p>
+        The try...catch statement is comprised of a try block and either a catch block, a finally block, or both. The code in the try block is executed first, and if it throws an exception, the code in the catch block will be executed. The code in the finally block will always be executed before control flow exits the entire construct.
+
+    </p>
+    <h3>Syntax</h3>
+    <p>
+        <code>
+            try {<br>
+            ....tryStatements<br>
+            ...} catch (exceptionVar) {<br>
+            .....catchStatements<br>
+            ...} finally {<br>
+            ....finallyStatements<br>
+            ...}
+        </code>
+    </p>
+    <p>
+    <strong>tryStatements</strong><br>
+    <br>
+    The statements to be executed.<br>
+        <br>
+    <strong>catchStatements</strong><br>
+    <br>
+    Statement that is executed if an exception is thrown in the try-block.<br>
+    </p>
+</body>
+</html>
