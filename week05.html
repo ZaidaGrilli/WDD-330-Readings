@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 05 notes</title>
+    </head>
+<body>
+    <h1>Week 05</h1>
+    <h2>Reading Notes</h2>
+
+    <h4>Difference between a single page application and regular approach</h4>
+    <img src="image_0002.png">
+    <p> in single-page web applications, when the browser makes the first request to the server, the server sends back the index.html file. and that's basically it. that's the only time an html file is served. the html file has a script tag for the .js file which is going to take control of the index.html page. all subsequent calls return just the data, usually in json format. the application uses this json data to update the page dynamically. however, the page never reloads.
+
+        the client (and not the server) handles the job of transforming data to html once the application has started. basically, most of the modern spa frameworks have a templating-engine of sorts running in your browser to generate the html.
+        
+        contrast this to a traditional web application. in a traditional application, every time the application calls the server, the server will render the entire html page. the client receives the rendered page and triggers a page refresh. in this case, the browser is the client. </p>
+
+
+    <h4>Disadvantages of single pages? </h4>
+    <p> well, there are pros and cons to everything.
+
+        One of the biggest detractions leveled at single page web applications has been that they cannot be properly indexed by search engines like google. since there is no html markup except the initial index.html file, search engines cannot index the content because their crawlers cannot execute the javascript used to generate the html. 
+        some of the criticisms leveled at spas are largely based on preference and complexity. however, in my opinion, they are largely subjective. the main point is that one should definitely look at the use-case while deciding on which approach best suits the application needs. 
+    </p>
+
+
+    <a href="pokedex_project.html">Zaida's Pokedex</a>
+
+    <a href="index.html">Link back to the Index</a>
+</body>
+</html>
