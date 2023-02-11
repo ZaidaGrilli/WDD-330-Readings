@@ -1,0 +1,74 @@
+#select{
+    border-color:  purple;
+    color:purple;
+}
+#mkItBlue {
+    color: rgb(0, 2, 128);
+}
+
+#selectMult {
+    border-color: rgb(177, 15, 136);
+    color:rgb(209, 0, 122);
+}
+.mkItGreen {
+    color: green;
+}
+
+#selectMult ::selection {
+background: lightpink;
+color: rgb(96, 29, 184);
+}
+
+
+
+/*------------------------------------*/
+body {
+    margin:10px;
+    max-width: 600px;
+}
+
+div{
+    margin:5px;
+}
+.infoBox{
+    margin: 1rem;
+    border: 3px solid rgb(255, 0, 255);
+    background-color: rgb(59, 3, 163);
+    width: 400px;
+    padding: 10px;
+}
+.infoBox h3 {
+    margin:0px;
+}
+.infoBox li {
+    padding-left: 1.2rem;
+}
+.underText{
+    padding-left: 2rem;
+}
+.boldText{
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 25px;
+    padding: 1em;
+    justify-items: left;
+    
+}
+.gallery figure{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin:0;
+}
+
+.gallery figure img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
